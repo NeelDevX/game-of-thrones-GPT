@@ -1,0 +1,35 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+
+# Virtual environments
+got_env/
+venv/
+.env/
+*.env
+
+# Streamlit cache
+.streamlit/
+
+# RAG Vector DB (Chroma / FAISS / LanceDB)
+chroma_db/
+vector_store/
+chroma/
+db/
+index/
+indexes/
+.vectordb/
+.vdb/
+
+# Data files
+data/
+*.pdf
+*.txt
+
+# Config with API Keys
+config.py
+
+
