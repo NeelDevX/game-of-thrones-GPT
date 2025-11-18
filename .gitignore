@@ -28,9 +28,6 @@ indexes/
 data/
 *.pdf
 
-# Config with API Keys
-config.py
-
 # Ignore all text files EXCEPT requirements.txt
 *.txt
 !requirements.txt
