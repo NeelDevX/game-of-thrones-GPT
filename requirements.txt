@@ -1,0 +1,7 @@
+streamlit
+openai>=1.40.0
+chromadb>=0.4.24
+pypdf
+sentence-transformers
+fastembed
+python-dotenv
