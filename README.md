@@ -1,6 +1,14 @@
 # 📜 Game of Thrones AI Chatbot
 
 ### A Fully Custom RAG + LLM Chatbot with Character Voices, Lore-Based Answers & Stunning Streamlit UI
+🚀 Live Demo
+
+Experience the chatbot directly here:
+<p align="left">
+  <a href="https://game-of-thrones-gpt-pa9gjikkdmxum3jos4xmcw.streamlit.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-%23D4AF37?style=for-the-badge&logo=streamlit&logoColor=white" />
+  </a>
+</p>
 
 <p align="center">
   <img src="assets/got_logo.jpg" width="40%">
