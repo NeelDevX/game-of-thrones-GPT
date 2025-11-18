@@ -1,5 +1,5 @@
 import time
-from openai import OpenAI, RateLimitError, APIError
+from openai import OpenAI
 from config import OPENAI_API_KEY, MODEL_NAME
 from rag_engine import retrieve_lore
 from prompts import STRICT_RAG_RULES
@@ -22,25 +22,17 @@ def ask_chatbot(conversation_history, character, mode, temperature, long_memory)
         {"role": "system", "content": f"Relevant GoT Lore:\n{rag_context}"},
     ] + conversation_history[1:]
 
-    # -----------------------------
-    # Retry Logic for Rate Limits
-    # -----------------------------
-    for attempt in range(2):  # Try 5 times
+    # Retry logic
+    for attempt in range(2):
         try:
             response = client.chat.completions.create(
                 model=MODEL_NAME, temperature=temperature, messages=messages
             )
             return response.choices[0].message.content
 
-        except RateLimitError:
+        except Exception as e:
             wait = 5 * (attempt + 1)
-            print(f"Rate limited. Waiting {wait}s and retrying...")
+            print(f"API error: {e}. Retrying in {wait}s...")
             time.sleep(wait)
 
-        except APIError:
-            wait = 3
-            print(f"Temporary API error. Retrying in {wait}s...")
-            time.sleep(wait)
-
-    # If all failed:
-    return "⚠️ The Citadel's ravens are overwhelmed. Try again in a moment, my friend."
+    return "⚠️ The Citadel's ravens are overwhelmed. Try again in a moment."
