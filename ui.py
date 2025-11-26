@@ -128,10 +128,8 @@ temperature = st.sidebar.slider("Creativity (Temperature)", 0.0, 1.5, 0.7, step=
 
 # Reset Chat Button
 if st.sidebar.button("🗑️ Reset Chat"):
-    st.session_state.conversation_history = [
-        {"role": "system", "content": "You are a Game of Thrones chatbot."}
-    ]
-    st.experimental_rerun()
+    st.session_state.clear()
+    st.rerun()
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("Made by **NeelDevX** ⚔️")
